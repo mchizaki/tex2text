@@ -20,7 +20,7 @@ $ pip uninstall tex2text
 ## Usage
 
 ```
-usage: tex2text.py [-h] -i INPUT_TEX -o OUTPUT_TEXT [-p PROPS_JSONC]
+usage: ck-tex2text [-h] -i INPUT_TEX -o OUTPUT_TEXT [-p PROPS_JSONC]
 
 convert tex to plain text.
 
@@ -39,6 +39,6 @@ options:
 ```
 📂tests/
 ├── 📄sample.tex
-├── 📄tex2text-props.tex
+├── 📄tex2text-props.jsonc
 └── 📄test.sh
 ```
