@@ -4,7 +4,7 @@
 """
 import argparse
 
-from tex2text import TeX2Text
+from tex2text.tex2text import TeX2Text
 
 parser = argparse.ArgumentParser(
     description = 'convert tex to plain text.'

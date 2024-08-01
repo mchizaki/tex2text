@@ -3,6 +3,7 @@
 """
 import re
 from dataclasses import dataclass
+
 SHOW = True
 TMPSTR_NEWLINE  = '___NEWLINE___'
 TMPSTR_NEWLINE2 = '___NEWLINE2___'

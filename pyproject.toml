@@ -18,7 +18,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.scripts]
-tex2text = "tex2text.script.tex2text:main"
+ck-tex2text = "tex2text.script.cktex2text:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}

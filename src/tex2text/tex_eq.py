@@ -4,6 +4,10 @@
 import re
 import sys
 import numpy as np
+# try:
+#     import numpy as np
+# except:
+#     pass
 from dataclasses import dataclass
 
 STR_INLINE_EQ   = 'inline-eq'
