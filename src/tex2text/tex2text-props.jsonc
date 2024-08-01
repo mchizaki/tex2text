@@ -1,0 +1,149 @@
+{
+    "inline_eq_simplified" : true,
+    "inline_eq_len_thr"    : 30,
+
+    "inline_eq_str"        : "inline-eq",
+    "display_eq_str"       : "\\[display-eq\\]",
+
+    "show"                 : false,
+
+    "eq_environment_names" : [
+        "equation",
+        "subequations",
+        "align"
+    ],
+
+    "removed_commands" : [
+        // "mathrm",
+        // "bm"
+    ],
+
+    "removed_commands_with_content" : [
+        "label",
+        "ref",
+        "eqref",
+        "textsuperscript",
+        "textsubscript"
+    ],
+
+    "replaced_commands_with_content": [
+        {
+            "cmd"     : "chapter",
+            "new_fmt" : "{newline2}# {content}{newline}"
+        },
+        {
+            "cmd"     : "section",
+            "new_fmt" : "{newline2}## {content}{newline}"
+        },
+        {
+            "cmd"     : "subsection",
+            "new_fmt" : "{newline2}### {content}{newline}"
+        },
+        {
+            "cmd"     : "subsubsection",
+            "new_fmt" : "{newline2}#### {content}{newline}"
+        },
+        {
+            "cmd"     : "ref",
+            "new_fmt" : "*"
+        },
+        {
+            "cmd"     : "eqref",
+            "new_fmt" : "(*)"
+        },
+        //--------------------------------------------------------------//
+        // citation
+        //--------------------------------------------------------------//
+        {
+            "cmd"     : "cite",
+            "new_fmt" : "[-]",
+            "prefix"  : "Ref. "
+        },
+        {
+            "cmd"     : "cite",
+            "new_fmt" : "[-]",
+            "prefix"  : "Refs. "
+        },
+        {
+            "cmd"     : "cite",
+            "new_fmt" : ""
+        }
+        //
+        // or
+        //
+        // {
+        //     "cmd"     : "cite",
+        //     "new_fmt" : "{CITE}"
+        // }
+    ],
+
+    "replaced_commands" : [
+        [ "\\\"{o}",      "ö" ],
+        [ "\\\"{a}",      "ä" ],
+        [ "\\\"{u}",      "ü" ]
+    ],
+
+    "replaced_math_symbols" : [
+        // Greek letters
+        [ "\\alpha",      "α" ],
+        [ "\\beta",       "β" ],
+        [ "\\gamma",      "γ" ],
+        [ "\\Gamma",      "Γ" ],
+        [ "\\delta",      "δ" ],
+        [ "\\Delta",      "Δ" ],
+        [ "\\epsilon",    "ϵ" ],
+        [ "\\varepsilon", "ε" ],
+        [ "\\zeta",       "ζ" ],
+        [ "\\eta",        "η" ],
+        [ "\\theta",      "θ" ],
+        [ "\\Theta",      "Θ" ],
+        [ "\\vartheta",   "ϑ" ],
+        [ "\\iota",       "Θ" ],
+        [ "\\kappa",      "κ" ],
+        [ "\\varkappa",   "ϰ" ],
+        [ "\\lambda",     "λ" ],
+        [ "\\Lambda",     "Λ" ],
+        [ "\\mu",         "μ" ],
+        [ "\\nu",         "ν" ],
+        [ "\\xi",         "ξ" ],
+        [ "\\Xi",         "Ξ" ],
+        [ "\\pi",         "π" ],
+        [ "\\Pi",         "Π" ],
+        [ "\\varpi",      "ϖ" ],
+        [ "\\sigma",      "σ" ],
+        [ "\\Sigma",      "Σ" ],
+        [ "\\varsigma",   "ς" ],
+        [ "\\tau",        "τ" ],
+        [ "\\upsilon",    "υ" ],
+        [ "\\Upsilon",    "Υ" ],
+        [ "\\phi",        "ϕ" ],
+        [ "\\Phi",        "Φ" ],
+        [ "\\varphi",     "φ" ],
+        [ "\\chi",        "χ" ],
+        [ "\\psi",        "ψ" ],
+        [ "\\Psi",        "Ψ" ],
+        [ "\\omega",      "ω" ],
+        [ "\\Omega",      "Ω" ],
+
+        // others
+        [ "\\hbar",       "ℏ"    ],
+        [ "\\partial",    "∂"    ],
+        [ "\\nabla",      "∇"    ],
+        [ "\\cdot",       "⋅"    ],
+        [ "\\int",        "∫"    ],
+        [ "\\iint",       "∫∫"   ],
+        [ "\\iiint",      "∫∫∫"  ],
+        [ "\\iiiint",     "∫∫∫∫" ],
+        [ "\\oint",       "∮"   ],
+        [ "\\sum",        "Σ"    ],
+        [ "\\parallel",   "//"   ],
+        [ "\\perp",       "⊥"    ],
+        [ "\\to",         "→"    ],
+
+        // removed command
+        [ "\\mathrm",     "" ],
+        [ "\\bm",         "" ]
+
+        // original
+    ]
+}

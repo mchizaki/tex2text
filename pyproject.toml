@@ -1,0 +1,37 @@
+[project]
+name = "tex2text"
+authors = [{name = "Masaya Chizaki"}]
+description = "convert from tex to text file"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11"
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "json"
+]
+dynamic = ["version"]
+
+[project.scripts]
+tex2text = "tex2text.script.tex2text:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "tex2text.version"}
+
+[tool.setuptools_scm]
+write_to = "src/tex2text/_version.py"
+version_scheme = "python-simplified-semver"
+local_scheme = "no-local-version"
+
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+

@@ -1,0 +1,172 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\label{chap:1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+As excitons have higher photo-emission rates than free carriers in semiconductors,
+highly efficient light-emitting devices utilizing excitons are expected.
+%
+Our exciton dynamics simulation model based on phononic,
+electronic, and radiative processes,
+named the phononic--excitonic--radiative (PXR) model,
+is available to analyze the dynamics under both thermal equilibrium and nonequilibrium states
+\cite{CK-JL-2022, CK-MSSP-2022}%
+.
+%
+
+%
+According to Ref. \cite{CK-JL-2022},
+the population transitions to upper levels of excitons reduce
+the radiative recombination rate of excitons in a three-dimensional (3D) space.
+%
+In bulk crystals,
+the rates of the radiative deexcitation and exciton-formation transitions
+from the continuum are lower than 0.01\% of the phononic transition rates.
+%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Theoretical model}
+\label{chap:2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+%
+\section{Energy eigenstates}
+%
+
+%
+% Table 1
+\begin{table}
+    \centering
+    \caption{%
+        Mott densities of 2D excitons with $n_{\parallel}$ estimated by
+        $N_{\mathrm{M}}(n_{\parallel}) = \frac{1}{4} \frac{1}{ [ (2n_{\parallel} - 1) a_{X\parallel}^{\mathrm{2D}} ]^2}$.
+    }
+    \label{tab:1}
+    \begin{tabular}[htbp]{@{}ccc@{}}
+        \hline
+        $n_{\parallel}$
+        & $N_{\mathrm{M}}(n_{\parallel})$ of $E_{\mathrm{B}}(1) = 108$ meV
+        & $N_{\mathrm{M}}(n_{\parallel})$ of $E_{\mathrm{B}}(1) = 215$ meV \\
+        %
+        \hline
+        %
+        1   & $1.276 \times 10^{13}$ (cm$^{-2}$)    & $3.863 \times 10^{13}$ (cm$^{-2}$) \\
+        2	& $1.418 \times 10^{12}$ (cm$^{-2}$)    & $4.292 \times 10^{12}$ (cm$^{-2}$) \\
+        3	& $5.106 \times 10^{11}$ (cm$^{-2}$)    & $1.545 \times 10^{12}$ (cm$^{-2}$) \\
+        4	& $2.605 \times 10^{11}$ (cm$^{-2}$)    & $7.883 \times 10^{11}$ (cm$^{-2}$) \\
+        %
+        \hline
+    \end{tabular}
+\end{table}
+%
+
+%
+Table \ref{tab:1} shows Mott densities of excitons with $n_{\parallel}$
+under two conditions of our simulation.
+%
+The wavefunction of an exciton state is denoted as
+\begin{equation}
+    \Psi_{X}(z_e, z_h, \bm{r}_{\parallel}, \bm{R}_{\parallel})
+    = \phi_{\perp}(z_e, z_h)
+        \Psi_{X\parallel}^{\nu_{\parallel},\bm{K}_{X\parallel}}
+        (\bm{r}_{\parallel}, \bm{R}_{\parallel} ),
+\end{equation}
+where
+$\Psi_{X\parallel}^{\nu_{\parallel},\bm{K}_{X\parallel}}
+    (\bm{r}_{\parallel}, \bm{R}_{\parallel} )$
+is the 2D-exciton wavefunction confined in a QW;
+$\bm{R}_\parallel$ and $\bm{r}_\parallel$ are the coordinate vectors
+of the CM and relative motions of the electron and hole of a 2D exciton, respectively;
+$\bm{K}_{X\parallel}$ is the wavevector of the 2D exciton;
+and $\nu_{\parallel}$ represents a set of quantum numbers specifying an excitonic quantum state.
+%
+The wavefunction
+$\Psi_{X\parallel}^{\nu_{\parallel},\bm{K}_{X\parallel}}
+    (\bm{r}_{\parallel}, \bm{R}_{\parallel} )$
+is obtained from the Schr\"{o}dinger equation of 2D excitons, which is given by
+%
+\begin{equation}
+    \left[
+        - \frac{\hbar^2}{2M_{\parallel}}  \nabla_{\bm{R}_{\parallel}}^2
+        - \frac{\hbar^2}{2\mu_{\parallel}}\nabla_{\bm{r}_{\parallel}}^2
+        - \frac{ e_0^2 }{ 4\pi\varepsilon_{\mathrm{s}} r_{\parallel} }
+    \right]
+    \Psi_{X\parallel}^{\nu_{\parallel},\bm{K}_{X\parallel}}
+    (\bm{r}_{\parallel}, \bm{R}_{\parallel} )
+    =
+    E_X^{\mathrm{tot}}(K_{X\parallel}, n_{\parallel})
+    \Psi_{X\parallel}^{\nu_{\parallel},\bm{K}_{X\parallel}}
+    (\bm{r}_{\parallel}, \bm{R}_{\parallel} ).
+\end{equation}
+%
+The respective $\nabla_{\bm{R}_{\parallel}}$ and $\nabla_{\bm{r}_{\parallel}}$ are
+the nabla differential operators with respect to the components of the vectors
+$\bm{R}_{\parallel}$ and $\bm{r}_{\parallel}$.
+%
+$e_0$ is the elementary charge.
+%
+The effective dielectric constant $\varepsilon_{\mathrm{s}}$ is
+$ e_0^2 / [ 4 \pi a_{X\parallel}^{\mathrm{2D}} E_{\mathrm{B}}(1) ]$,
+where respective $a_{X\parallel}^{\mathrm{2D}}$ and $E_{\mathrm{B}}(1)$
+are the 2D-$1S$-exciton Bohr radius and binding energy.
+%
+Here, Equation \eqref{eq:5} can be analytically solved
+by the method of separation of variables of $\bm{R}_{\parallel}$ and $\bm{r}_{\parallel}$ as follows:
+%
+\begin{equation}
+    \Psi_{X\parallel}^{\nu_{\parallel},\bm{K}_{X\parallel}}
+    (\bm{r}_{\parallel}, \bm{R}_{\parallel} )
+        = \phi_{S_X}^{\bm{K}_{X\parallel}}(\bm{R}_{\parallel})
+          \psi_{\nu_{\parallel}}(\bm{r}_{\parallel}),
+\end{equation}
+%
+where $S_X$ is the normalization area of excitons.
+%
+$\phi_{S_X}^{\bm{K}_{X\parallel}}(\bm{R}_{\parallel})$ is the 2D-plane wave defined as Equation \eqref{eq:2}
+of $\bm{k}_{\parallel} = \bm{K}_{X\parallel},\ \bm{r}_{\parallel} = \bm{R}_{\parallel}$, and $S = S_X$.
+%
+$\psi_{\nu_{\parallel}}(\bm{r}_{\parallel})$ is the 2D-hydrogen-atom wavefunction
+determined by a set of two quantum numbers $\nu_{\parallel} = (n_{\parallel}, m_{\parallel})$,
+\textsuperscript{\cite{35-Shinada-JPSJ-1966,36-Yang-PRA-1991,37-Parfitt-JMP-2002}}
+where respective $n_{\parallel}$ $(= 1, 2, \dots)$ and $m_{\parallel}$ are
+the principal quantum number and the azimuthal quantum number,
+which are integers satisfying $|m_{\parallel}| < n_{\parallel}$.
+%
+
+%
+The total energy of the exciton state with $\bm{K}_{X\parallel}$ and $n_{\parallel}$ is given by
+%
+\begin{equation}
+    E_X^{\mathrm{tot}}(K_{X\parallel}, n_{\parallel})
+    = E_{X\parallel}(K_{X\parallel}) - E_{\mathrm{B}}(n_{\parallel}),
+\end{equation}
+%
+where $E_{X\parallel}(K_{X\parallel}) = \hbar^2 K_{X\parallel}^2 / 2M_{\parallel}$ is the kinetic energy of 2D excitons.
+%
+$E_{\mathrm{B}}(n_{\parallel}) = E_{\mathrm{B}}(1) / ( 2 n_{\parallel} - 1 )^2$
+is the binding energy of a 2D exciton with $n_{\parallel}$.
+%
+The 2D-$1S$-exciton binding energy $E_{\mathrm{B}}(1)$ is
+four times larger than the 3D-$1S$-exciton binding energy $E_{\mathrm{B}\parallel}^{\mathrm{3D}}$.
+%
+Figure \ref{fig:1} shows the energy levels of 2D excitons and continuum states.
+%
+
+
+
+%
+% figure 1
+\begin{figure}[t]
+    \includegraphics[width=\linewidth]{fig/Fig1.pdf}
+    \caption{
+        This is the caption of figure 1.
+    }
+    \label{fig:1}
+\end{figure}
+%
+
